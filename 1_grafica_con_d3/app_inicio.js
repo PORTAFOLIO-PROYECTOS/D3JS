@@ -11,5 +11,8 @@ function graficar() {
         .enter().append('div')
         .style('width', function(d){
             return x(d) + 'px';
+        })
+        .text(function(d){
+            return d;
         });
 }
