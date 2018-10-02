@@ -15,7 +15,7 @@ function graficar() {
         .append("rect")
         .attr("x", 0)
         .attr("y", 0)
-        .attr("width", 20)
+        .attr("width", 0)
         .attr("height", 100)
 
     .attr("x", function(d, i) {
@@ -41,8 +41,10 @@ function graficar() {
             d3.select(this)
                 .attr("fill", "SteelBlue");
         })
-  
-
+    .transition()
+    .delay(function(d, i){ return 100; }) //i*100
+    .duration(2000)
+    .attr('width', function(d){return 20; })
 
     svg.selectAll("text")
         .data(datos)
